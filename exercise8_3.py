@@ -15,3 +15,17 @@ for line in fhand:
     if len(words) < 3 or words[0] != 'From':
         continue
     print(words[2])
+
+"""or use Demogen Logical law to use 'and' logical operator in the code"""
+
+fhand = open('mbox-short.txt')
+for line in fhand:
+    words = line.split()
+    # print("Debug:",words)
+    if not( not (len(words)< 3) and  words[0] == 'From' ): 
+        continue
+    #change the satement from : if len(words) < 3 or words[0] != 'From': continue
+    #to :if not( not (len(words)< 3) and  words[0] == 'From' ): continue
+    #because Demogen Law :~(A or B) == (~A)and(~B)
+    #A or B == ~((~A)and(~B))
+    print(words[2])
